@@ -1,60 +1,74 @@
-markdown
-Copy code
+
 # Streamlit Authentication Setup
 
-This guide demonstrates how to implement basic username and password authentication in **Streamlit** using the **streamlit-authenticator** library. Follow the instructions below to successfully set up and run the authentication system.
+This project demonstrates how to set up simple username and password authentication in **Streamlit** using the **streamlit-authenticator** library. Below are the steps to get the project running.
 
 ## Prerequisites
 
-Ensure the following are installed on your machine:
+Make sure you have the following installed on your system:
 
 - **Python 3.x**
-- **pip** (Python's package manager)
-
----
+- **pip** (Python package manager)
 
 ## Installation Steps
 
 ### 1. Clone the Repository
 
-Begin by cloning the project repository to your local machine:
+Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/your-repo/kubenine-authentication.git
 cd kubenine-authentication
-2. Install Required Libraries
-Install all necessary dependencies by running the command below:
+```
 
-bash
-Copy code
+### 2. Install Required Libraries
+
+Install all necessary libraries by running the following command:
+
+```bash
 pip install -r requirements.txt
-3. Set Up Credentials
-Create a file named credentials.yaml to store user credentials and session-related configurations, such as usernames, hashed passwords, and cookie settings.
+```
 
-4. Hash the Password
-To securely hash your password, use the provided hash.py script:
+### 3. Set Up Credentials
 
-Run the script by executing the following command:
+Create a file named `credentials.yaml` to store the user credentials and cookie settings.
 
-bash
-Copy code
+**Example `credentials.yaml` file:**
+
+```yaml
+credentials:
+  usernames:
+    admin:
+      name: admin
+      email: admin@example.com
+      password: <hashed_password_here>  # Replace with your bcrypt-hashed password
+
+cookie:
+  expiry_days: 30
+  key: superstrongkey
+  name: demo_cookie
+```
+
+### 4. Hash the Password
+
+Use the `hash.py` script to hash your password securely:
+
+```bash
 python hash.py
-After running the script, it will generate a hashed version of your password. Copy this hashed password.
+```
 
-Open the credentials.yaml file and replace the placeholder <hashed_password_here> with the hashed password generated in the previous step.
+Replace the `<hashed_password_here>` in your `credentials.yaml` file with the generated hash.
 
-5. Create the Main Application File
-File: main.py
-This file is responsible for handling the user authentication process via the streamlit-authenticator library. Ensure that credentials.yaml is correctly referenced in this file to enable proper authentication.
+### 5. Run the Application
 
-6. Run the Application
-To launch the Streamlit application, run the following command:
+After setting up the credentials, you can start the Streamlit app:
 
-bash
-Copy code
+```bash
 streamlit run main.py
-This will start the application and open it in your default web browser. You can log in using the credentials stored in the credentials.yaml file.
+```
 
-Now your Streamlit app is up and running with authentication functionality. Enjoy!
+This will open the app in your default browser. Log in using the credentials you set in `credentials.yaml`.
 
-Copy code
+## Need Help?
+
+If you need assistance or want to implement similar solutions for your projects, feel free to contact **KubeNine**. We offer specialized DevOps and cloud solutions tailored to your needs.
