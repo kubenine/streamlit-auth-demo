@@ -69,6 +69,13 @@ streamlit run main.py
 
 This will open the app in your default browser. Log in using the credentials you set in `credentials.yaml`.
 
+## Blog Post
+
+For a detailed guide on how to set up Streamlit authentication, refer to the blog post:  
+**[Streamlit Authentication Made Simple: Step-by-Step Guide](https://www.kubeblogs.com/streamlit-authentication/)**
+
+In the blog, you'll find a step-by-step tutorial explaining how to integrate OAuth with your Streamlit app, including code examples and explanations.
+
 ## Need Help?
 
 If you need assistance or want to implement similar solutions for your projects, feel free to contact **KubeNine**. We offer specialized DevOps and cloud solutions tailored to your needs.
